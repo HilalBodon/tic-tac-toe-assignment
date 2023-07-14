@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600;700&display=swap');
-
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Radio Canada', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
@@ -57,8 +55,13 @@ body {
     width: 75px;
     text-align: center;
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 700;
 }
+
+.strike{
+    text-decoration: red line-through;
+    color: red;
+    }
 
 .btn:hover {
     cursor: pointer;
@@ -66,8 +69,7 @@ body {
 }
 
 .btn:disabled {
-    color: black;
-    cursor: no-drop;
+    cursor: not-allowed;
 }
 
 .result,.resultX,.resultY,.scoreValueX,.scoreValueY {
@@ -95,3 +97,4 @@ body {
     color: white;
     background-color: black;
 }
+

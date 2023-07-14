@@ -1,3 +1,4 @@
+
 let cells = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 
@@ -49,15 +50,31 @@ const ticTacToe = (element, index) => {
       continue;
     }
 
+    // if (a == b && b == c) {
+    //   if (a == 'X') {
+    //     result.innerHTML = `Player ${playerXname.value} Won`;
+    //   } else {
+    //     result.innerHTML = `Player ${playerOname.value} Won`;
+    //   }
+    //   btns.forEach((btn) => (btn.disabled = true));
+    //   score(a);
+
+    // }
     if (a == b && b == c) {
-      if (a == 'X') {
-        result.innerHTML = `Player ${playerXname.value} Won`;
-      } else {
-        result.innerHTML = `Player ${playerOname.value} Won`;
+        if (a == 'X') {
+          result.innerHTML = `Player ${playerXname.value} Won`;
+        } else {
+          result.innerHTML = `Player ${playerOname.value} Won`;
+        }
+        btns.forEach((btn) => (btn.disabled = true));
+      
+        // Add the strike class to the winning cells
+        document.getElementById(`cell-${condition[0]}`).classList.add('strike');
+        document.getElementById(`cell-${condition[1]}`).classList.add('strike');
+        document.getElementById(`cell-${condition[2]}`).classList.add('strike');
+      
+        score(a);
       }
-      btns.forEach((btn) => (btn.disabled = true));
-      score(a);
-    }
   }
 };
 
@@ -70,6 +87,9 @@ function reset() {
     currentPlayer = 'X';
     result.innerHTML = `Player X Turn`;
     btns.forEach((btn) => btn.disabled = false);
+    document.querySelectorAll('.btn').forEach((btn) => {
+        btn.classList.remove('strike');
+    });
 };
 
 document.querySelector('#reset').addEventListener('click', reset);
@@ -77,3 +97,4 @@ document.querySelector('#reset').addEventListener('click', reset);
 btns.forEach((btn, i) => {
     btn.addEventListener('click', () => ticTacToe(btn, i));
 });
+// ______________________________________________________
