@@ -72,7 +72,6 @@ const ticTacToe = (element, index) => {
         document.getElementById(`cell-${condition[0]}`).classList.add('strike');
         document.getElementById(`cell-${condition[1]}`).classList.add('strike');
         document.getElementById(`cell-${condition[2]}`).classList.add('strike');
-      
         score(a);
       }
   }
