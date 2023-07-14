@@ -56,7 +56,7 @@ body {
     cursor: no-drop;
 }
 
-.result,.resultX,.resultY {
+.result,.resultX,.resultY,.scoreValueX,.scoreValueY {
     text-align: center;
 }
 
